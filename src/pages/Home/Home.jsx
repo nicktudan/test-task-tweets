@@ -1,15 +1,12 @@
-import { HomeContainer, HomeTitle } from './Home.styled';
+// import { HomeContainer, HomeTitle } from './Home.styled';
 
 const Home = () => {
   return (
-    <HomeContainer>
-      <HomeTitle>
-        Welcome to Phonebook{' '}
-        <span role="img" aria-label="Telephone icon">
-          ☎️
-        </span>
-      </HomeTitle>
-    </HomeContainer>
+    <div>
+      <h1>
+        Welcome to Tweet!
+      </h1>
+    </div>
   );
 };
 
