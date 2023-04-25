@@ -8,27 +8,20 @@
 // import { ContactList } from '..//../components/ContactList/ContactList';
 // import { Filter } from '..//../components/Filter/Filter';
 // import { Loader } from '..//../components/Loader/Loader';
-
-// import { TitlePhonebook, TitleContacts } from './Tweets.styled';
+import { useLocation } from 'react-router-dom';
+// import {TweetCard} from '..//../components/TweetCard/TweetCard'
+import { BackLinkHref, Title } from './Tweets.styled';
 
 const Tweets = () => {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   return (
-    <>
-    <h2>Cards Tweets</h2>
-      {/* <TitlePhonebook>Phonebook</TitlePhonebook>
-      <ContactForm />
-      <TitleContacts>Contacts</TitleContacts>
-      <Filter />
-      {isLoading && <Loader />}
-      <ContactList /> */}
-    </>
+    <div>
+      <BackLinkHref to={backLinkHref}>&#10229; Back</BackLinkHref>
+      <Title>Cards Tweets</Title>
+      {/* <TweetCard /> */}
+    </div>
   );
 };
 

@@ -1,12 +1,12 @@
-// import { HomeContainer, HomeTitle } from './Home.styled';
+import { HomeContainer, HomeTitle } from './Home.styled';
 
 const Home = () => {
   return (
-    <div>
-      <h1>
+    <HomeContainer>
+      <HomeTitle>
         Welcome to Tweet!
-      </h1>
-    </div>
+      </HomeTitle>
+    </HomeContainer>
   );
 };
 

@@ -1,15 +1,15 @@
 // import { useSelector } from 'react-redux';
-// import { Suspense } from 'react';
-// import { Outlet } from 'react-router-dom';
 import { Navigation } from '..//Navigation/Navigation';
+
+import { Header } from './AppBar.styled';
 
 
 
 export const AppBar = () => {
 
   return (
-    <header>
+    <Header>
       <Navigation />
-    </header>
+    </Header>
   );
 };

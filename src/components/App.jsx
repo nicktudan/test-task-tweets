@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import { GlobalStyle } from './GlobalStyle';
 // import Home from '../pages/Home/Home';
 // import Tweets from '../pages/Tweets/Tweets';
@@ -27,14 +27,15 @@ export const App = () => {
   // }, [dispatch]);
 
   return (
-    <Layout>
+    <>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/tweets" element={<Tweets />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>
-    </Layout>
+    </>
   );
 };
