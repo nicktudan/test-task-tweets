@@ -13,15 +13,11 @@ import { BackLinkHref, Title } from './Tweets.styled';
 
 const Tweets = () => {
   const dispatch = useDispatch();
-  // const users = useSelector(selectUsers);
     const isLoading = useSelector(selectIsLoading);
 
-  useEffect(() => {
-    // if (users) {
-    //   return;
-    // }
+   useEffect(() => {
     dispatch(fetchUsers());
-  }, [dispatch]);
+   }, [dispatch]);
   
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
