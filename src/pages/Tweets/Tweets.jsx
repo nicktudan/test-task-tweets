@@ -12,12 +12,16 @@ import { selectIsLoading } from 'redux/selectors';
 import { BackLinkHref, Title } from './Tweets.styled';
 
 const Tweets = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  // const users = useSelector(selectUsers);
     const isLoading = useSelector(selectIsLoading);
 
-    useEffect(() => {
-      dispatch(fetchUsers());
-    }, [dispatch]);
+  useEffect(() => {
+    // if (users) {
+    //   return;
+    // }
+    dispatch(fetchUsers());
+  }, [dispatch]);
   
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';

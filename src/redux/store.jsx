@@ -17,12 +17,12 @@ import { usersReducer } from './slice';
 const usersPersistConfig = {
   key: 'users',
   storage,
-  whitelist: ['items'],
+  // whitelist: ['items'],
 };
 
 export const store = configureStore({
   reducer: {
-    users: persistReducer(usersPersistConfig, usersReducer),
+    users: persistReducer(usersPersistConfig, usersReducer)
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
