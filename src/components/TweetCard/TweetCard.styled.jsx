@@ -119,7 +119,7 @@ export const CardBtn = styled.button`
   border-radius: 10px;
   cursor: pointer;
 
-  &.isFollowed {
+  &.isActive {
     background-color: #5cd3a8;
   }
 

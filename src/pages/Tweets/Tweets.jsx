@@ -1,18 +1,24 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-
-// import { fetchContacts } from 'redux/contacts/operations';
-// import { selectIsLoading } from 'redux/contacts/selectors';
-
-// import { ContactForm } from '..//../components/ContactForm/ContactForm';
-// import { ContactList } from '..//../components/ContactList/ContactList';
-// import { Filter } from '..//../components/Filter/Filter';
-// import { Loader } from '..//../components/Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import {TweetCard} from '..//../components/TweetCard/TweetCard'
+
+// import { Filter } from '..//../components/Filter/Filter';
+import { Loader } from '..//../components/Loader/Loader';
+import { TweetList } from '..//../components/TweetList/TweetList';
+
+import { fetchUsers } from 'redux/operations';
+import { selectIsLoading } from 'redux/selectors';
+
 import { BackLinkHref, Title } from './Tweets.styled';
 
 const Tweets = () => {
+    const dispatch = useDispatch();
+    const isLoading = useSelector(selectIsLoading);
+
+    useEffect(() => {
+      dispatch(fetchUsers());
+    }, [dispatch]);
+  
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
@@ -20,7 +26,8 @@ const Tweets = () => {
     <div>
       <BackLinkHref to={backLinkHref}>&#10229; Back</BackLinkHref>
       <Title>Cards Tweets</Title>
-      <TweetCard />
+      {isLoading && <Loader />}
+      <TweetList />
     </div>
   );
 };

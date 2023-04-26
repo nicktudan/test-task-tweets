@@ -7,11 +7,17 @@ export const TweetList = ({ users }) => {
 
   return (
     <TweetsList>
-      {users.map(user => (
-        <li key={user.id}>
-          <TweetCard user={user} />
-        </li>
-      ))}
+      {users && users.map(user => {
+        return (
+          <TweetCard
+            key={user.id}
+            avatar={user.avatar}
+            tweets={user.tweets}
+            followers={user.followers}
+            id={user.id}
+          />
+        );
+      })}
     </TweetsList>
   );
 };
