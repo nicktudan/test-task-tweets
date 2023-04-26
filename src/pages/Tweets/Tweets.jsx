@@ -9,7 +9,7 @@
 // import { Filter } from '..//../components/Filter/Filter';
 // import { Loader } from '..//../components/Loader/Loader';
 import { useLocation } from 'react-router-dom';
-// import {TweetCard} from '..//../components/TweetCard/TweetCard'
+import {TweetCard} from '..//../components/TweetCard/TweetCard'
 import { BackLinkHref, Title } from './Tweets.styled';
 
 const Tweets = () => {
@@ -20,7 +20,7 @@ const Tweets = () => {
     <div>
       <BackLinkHref to={backLinkHref}>&#10229; Back</BackLinkHref>
       <Title>Cards Tweets</Title>
-      {/* <TweetCard /> */}
+      <TweetCard />
     </div>
   );
 };

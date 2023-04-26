@@ -12,10 +12,10 @@ export const LinkNav = styled(NavLink)`
 
   :hover,
   :focus {
-    color: #b0e0e6;
+    color: #ebd8ff;
   }
 
   &.active {
-    color: #00bfff;
+    color: #5cd3a8;
   }
 `;
